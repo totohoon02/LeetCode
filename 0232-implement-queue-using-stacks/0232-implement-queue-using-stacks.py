@@ -8,8 +8,9 @@ class MyQueue:
         self.queue.append(x)
 
     def pop(self) -> int:
-        data = self.queue[0]
-        self.queue = self.queue[1:]
+        # data = self.queue[0]
+        # self.queue = self.queue[1:]
+        data = self.queue.pop(0)
         return data
 
     def peek(self) -> int:
