@@ -1,17 +1,10 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        dic = {}
-
+        res = {}
         for str in strs:
-            # sorted("bcd") -> ['b', 'c', 'd']
-            sorted_str = "".join(sorted(str))
-
-            # if key exist
-            if sorted_str in dic:
-                dic[sorted_str].append(str)
-
-            # else
+            sorted_word = "".join(sorted(list(str)))
+            if res.get(sorted_word):
+                res[sorted_word].append(str)
             else:
-                dic[sorted_str] = [str]
-
-        return list(dic.values())
+                res[sorted_word] = [str]
+        return list(res.values())
